@@ -1,11 +1,6 @@
 import { StyleSheet, Text, View,TouchableOpacity, Dimensions, Alert,Button } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons'
 
-
-
-
-
-
 export default function MainPage(props)
 {
     

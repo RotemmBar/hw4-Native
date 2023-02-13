@@ -7,26 +7,66 @@ import NoteItem from '../Components/NoteItem';
 
 export default function Personal() 
 {
+  // const categories=[
+  //   {
+  //   name:'Personal',
+  //   id:1,
+  //   notes:[
+  //     {
+  //       id:1,
+  //       text:'Test Note'
+  //     }
+  //   ]
+  //   },
+  //   {
+  //   name:'Work',
+  //   id:2,
+  //   notes:[
+  //     {
+  //       id:1,
+  //       text:'Test Note'
+  //     }
+  //   ]
+  //   },
+  //   {
+  //   name:'Ideas',
+  //   id:2,
+  //   notes:[
+  //     {
+  //       id:1,
+  //       text:'Test Note'
+  //     }
+  //   ]
+  //   }
+    
+  //   ]
+
+  //   const [category, setCategory]=useState({categories})
+
 
   const [noteArr,setNoteArr]=useState([]);
 
-  function handleClick (text) 
+  function handleClick(text,id) 
   {
     setNoteArr((currentnotesarr)=>[...noteArr,
     {text: text, id: Math.random().toString()}]);
+
+    // const newcat=categories.map(category=>{
+    //   if (categories.id==id)
+    //   {
+    //     category.notes.push(text)
+    //     category.id.push(id)
+
+    //   }
+    //   console.log(category)
+    //   return category
+
+    // })
+    // setCategory(newcat)
+
+
     endAddNoteHandle();
 
-    _store=async()=>{
-      try{
-        await AsyncStorage.setItem(
-          noteArr
-        )
-      }
-      catch(error)
-      {
-        <Text>Note not saved</Text>
-      }
-    }
   };
  
   function deleteNoteHandler(id){
@@ -51,9 +91,10 @@ export default function Personal()
   {
     setModalIsVisible(false);
   }
+
+  
   return (
     <View style={styles.container}>
-
     <View style={styles.butview}>  
     <Button 
     title='Add Personal Note' 
